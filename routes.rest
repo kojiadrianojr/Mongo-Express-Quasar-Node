@@ -1,0 +1,26 @@
+POST http://localhost:3000/task
+Content-Type: application/json
+
+{
+    "name": "Task One",
+    "desc": "se Task",
+    "status": "Not Done"
+}
+
+###
+
+GET http://localhost:3000/task/list
+
+###
+GET http://localhost:3000/task/list/5f2c0a13bbbce404570afa6b
+
+###
+DELETE http://localhost:3000/task/delete-all
+
+###
+PATCH http://localhost:3000/task/edit/5f2c0a13bbbce404570afa6b
+Content-Type: application/json
+
+{
+    "status": "z"
+}
