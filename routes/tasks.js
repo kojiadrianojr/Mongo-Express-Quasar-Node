@@ -14,7 +14,7 @@ route.post('/', async(req, res) => {
     });
     try {
         const newTask = await task.save();
-        res.status(201).json(`[ ${newTask.name} ] task is created!`);
+        res.status(201).json(` new task created!`);
     }catch (e) {
         res.status(400).res.json({msg: e.message});
     }
@@ -63,6 +63,15 @@ route.get('/list/:id', findTask, async(req, res) => {
     try {
         let task = res.task;
         res.status(200).json(task);
+    } catch (e){
+        res.status(500).json({msg: e.message});
+    }
+})
+
+route.delete('/list/:id', findTask, async(req,res) => {
+    try {
+        await Task.deleteOne(res.task)
+        res.status(200).json({msg: 'SUCCESS'})
     } catch (e){
         res.status(500).json({msg: e.message});
     }

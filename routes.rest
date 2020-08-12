@@ -2,9 +2,9 @@ POST http://localhost:3000/task
 Content-Type: application/json
 
 {
-    "name": "Task One",
-    "desc": "se Task",
-    "status": "Not Done"
+    "name": "Ride your bike",
+    "desc": "The Task Three",
+    "status": false
 }
 
 ###
@@ -12,15 +12,19 @@ Content-Type: application/json
 GET http://localhost:3000/task/list
 
 ###
-GET http://localhost:3000/task/list/5f2c0a13bbbce404570afa6b
+GET http://localhost:3000/task/list/5f33a3d892133401423fc22e
 
 ###
 DELETE http://localhost:3000/task/delete-all
 
 ###
-PATCH http://localhost:3000/task/edit/5f2c0a13bbbce404570afa6b
+PATCH http://localhost:3000/task/edit/5f33a3d892133401423fc22e
 Content-Type: application/json
 
 {
-    "status": "z"
+    "name":"updated new task"
 }
+
+###
+
+DELETE http://localhost:3000/task/list/5f32a363fb47a8012a573298
